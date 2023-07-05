@@ -331,7 +331,8 @@
 3310 PW(F, 2) = 0: PW(F, 3) = 0
 3320 GOTO 3530
 3330 IF S > 8 THEN GOTO 3460
-3340 Z = HP(1): HP(1) = HP(2): HP(2) = Z
+3340 PW(T, H) = 0
+3345 Z = HP(1): HP(1) = HP(2): HP(2) = Z
 3350 Z = PB(1): PB(1) = PB(2): PB(2) = Z
 3360 FOR I = 1 TO 3
 3370 Z = PW(1, I): PW(1, I) = PW(2, I): PW(2, I) = Z
@@ -342,7 +343,9 @@
 3420 PRINT "Lightning strikes!"
 3430 PRINT PN$(T) + " and " + PN$(F) + " fall to the ground..."
 3440 PRINT "When they wake up it seems " + PN$(T) + " and " + PN$(F) + " have switched bodies!"
-3450 GOTO 3540
+3441 PRINT
+3442 PRINT "The spellbook vanishes..."
+3450 RETURN
 3460 IF S > 9 THEN GOTO 3500
 3470 A = FNRAND(2): PA(A, 1) = 1: PB(A) = 0
 3480 PRINT PN$(A) + "'s hands go limp!"
